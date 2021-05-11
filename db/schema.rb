@@ -18,18 +18,16 @@ ActiveRecord::Schema.define(version: 2021_05_11_190542) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-    
+
   create_table "schools", force: :cascade do |t|
     t.string "name"
     t.string "street"
     t.string "city"
     t.string "email"
     t.string "phone"
-
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
