@@ -53,8 +53,10 @@ ActiveRecord::Schema.define(version: 2021_05_13_190946) do
     t.string "city"
     t.string "email"
     t.string "phone"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_schools_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
