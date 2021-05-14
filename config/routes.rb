@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 
-  resources :schools
-
-
-  resources :categories, only: [ :index ] do
-    resources :items, only: [ :index, :show ]
+  resources :schools, only: [ :index, :show ] do
+    resources :categories, only: [ :index ] do
+      resources :items, only: [ :index, :show ]
+    end
   end
-
 
 end
