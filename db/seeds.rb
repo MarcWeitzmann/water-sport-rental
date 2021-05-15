@@ -5,7 +5,7 @@ Item.destroy_all
 School.destroy_all
 User.destroy_all
 Category.destroy_all
-
+Rental.destroy_all
 
 puts "Creating users"
 user1 = User.create({ email: "jack@middleton.com", password: "123456"})
@@ -38,5 +38,11 @@ item2002 = Item.create({ name: "Surfsuit", description: "Keeps you warm", price:
 item2003 = Item.create({ name: "Inflatable SUP", description: "For all needs", price: 35, category: category_sup, school: school2 })
 
 item2004 = Item.create({ name: "6.3 SUP", description: "Professional SUP", price: 55, category: category_sup, school: school2 })
+
+
+puts "Creating rentals"
+rental1 = Rental.create({start_day: 12-04-2021, end_day:13-04-2021, start_time: "10:00:00", end_time: "12:00:00"})
+
+rental2 = Rental.create({start_day: 20-04-2021, end_day:22-04-2021, start_time: "09:00:00", end_time: "12:00:00"})
 
 puts "Seed is finished"
