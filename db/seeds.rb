@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts "Starting the seed"
 
 puts "Deleting all data"
@@ -24,8 +16,10 @@ school1 = School.create({ name: "WindSpirit Club", street: "Av. do Mar", city: "
 school2 = School.create({name: "Boarder Club Portugal", street: "Rua do Sol", city: "Caparica", email: "info@boarderclub.pt", phone: "+35191987654", user: user2 })
 
 puts "Creating categories"
-category_surf = Category.create ({ name: "Surf", description: "Enjoy the day with a sufing experience"})
-category_sup = Category.create({ name: "SUP", description: "Relax sliding over the water"})
+category_surf = Category.create ({ name: "Surf", description: "Enjoy the day with a sufing experience", image_name: "surfing.jpg"})
+category_sup = Category.create({ name: "SUP", description: "Relax sliding over the water", image_name: "SUP.jpg"})
+category_kitesurf = Category.create({ name: "Kitesurf", description: "Big jumps, big waves", image_name: "kitesurf.jpg"})
+category_lesson = Category.create({ name: "Lesson", description: "From zero to hero", image_name: "lesson.jpg"})
 
 puts "Creating items"
 item1001 = Item.create({ name: "3.5 Surfboard", description: "For all conditions", price: 30, category: category_surf, school: school1 })
