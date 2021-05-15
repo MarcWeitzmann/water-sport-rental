@@ -5,8 +5,10 @@ Rails.application.routes.draw do
 
   resources :schools, only: [ :index, :show ] do
     resources :categories, only: [ :index ] do
-      resources :items, only: [ :index, :show ]
+      resources :items, only: [ :index, :show, :new, :create ]
     end
   end
+
+  resources :items, only: [:edit, :update, :destroy]
 
 end
