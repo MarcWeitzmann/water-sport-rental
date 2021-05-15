@@ -1,0 +1,15 @@
+<div class="container mt-3" >
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <h1>Our Schools</h1>
+
+      <ul>
+        <% @schools.each do |school| %>
+          <li><%= school.name %></li>
+          <%= link_to "Schools", school_path(school), class: "btn btn-primary" %>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</div>

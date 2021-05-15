@@ -2,49 +2,22 @@
   <div class="row justify-content-center">
     <div class="col-10" %>     
       <h1>Here are the Categories</h1>
-
-      <div class="d-flex justify-content-between">
       
-        <div class="card" style="width: 18rem;">
-          <%= image_tag "surfing.jpg", alt: "Surfing", class: "d-block w-50" %>
-          <div class="card-body">
-            <h5 class="card-title">SURFING</h5>
-            <p class="card-text">Surfing</p>
-            <%= link_to "Check the offers", items_path, class: "btn btn-primary" %>
-          </div>
-        </div>
+      <ul>
+        <% @categories.each do |category| %>
+          <div class="card" style="width: 18rem;">
+            <%= image_tag category.image_name, alt: category.name, class: "d-block w-50" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= category.name %></h5>
+              <p class="card-text"><%= category.description %></p>
+              <%= link_to "Check the offers", school_category_items_path(@school, category), class: "btn btn-primary" %>
+            </div>
+          </div>  
+        <% end %>
+      </ul>
 
-        <div class="card" style="width: 18rem;">
-          <%= image_tag "SUP.jpg", alt: "SUP", class: "d-block w-50" %>
-          <div class="card-body">
-            <h5 class="card-title">SUP</h5>
-            <p class="card-text">Stand Up Paddle</p>
-            <%= link_to "Check the offers", items_path, class: "btn btn-primary" %>
-          </div>
-        </div>
-      
-      </div>
-        
-      <div class="d-flex justify-content-between">
-        <div class="card" style="width: 18rem;">
-          <%= image_tag "kitesurf.jpg", alt: "Kitesurf", class: "d-block w-50" %>
-          <div class="card-body">
-            <h5 class="card-title">KITESURF</h5>
-            <p class="card-text">Kitesurf.</p>
-            <%= link_to "Check the offers", items_path, class: "btn btn-primary" %>
-          </div>
-        </div>
+      <%# <div class="d-flex justify-content-between"> %>
 
-        <div class="card" style="width: 18rem;">
-          <%= image_tag "lesson.jpg", alt: "Lesson", class: "d-block w-50" %>
-          <div class="card-body">
-            <h5 class="card-title">LESSONS</h5>
-            <p class="card-text">Lessons</p>
-            <%= link_to "Check the offers", items_path, class: "btn btn-primary" %>
-          </div>
-        </div>
-      </div>
-
-    </div>  
+    </div>   
   </div>
 </div>

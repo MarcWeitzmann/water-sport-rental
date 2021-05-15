@@ -1,0 +1,19 @@
+<div class="container mt-3" >
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <h2><%= @school.name %></h2>
+      <p><%= @school.street %></p>
+      <p><%= @school.city %></p>
+      <p><%= @school.email %></p>
+      <p><%= @school.phone %></p>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= link_to "Categories of this school", school_categories_path(@school), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
