@@ -1,32 +1,40 @@
 <div class="container mt-3 style="padding: 90px" >
   <div class="row justify-content-center">
-    <div class="col-10" %>
+    <div class="col-12" %>
       <h1><%= @category.name %></h1>
+      <%= link_to 'Create Item', new_school_category_item_path, class: "btn btn-primary" %>
+      
+      <div class="row">
 
-      <% @items.each do |item| %>
-        <div class="col mt-3">
-          <div class="card" style="width: 18rem;">
-            <% if item.photo.attached? %>
-              <%= cl_image_tag(item.photo.key, width: 200, height: 200, crop: :fill) %>
-            <% else %>
-              <%= image_tag "surfboard.png", width: 200, height: 200 %>
-            <% end %>
+        <% @items.each do |item| %>
+          <div class="col mt-3">
+            <div class="card" style="width: 18rem;">
+              <% if item.photo.attached? %>
+                <%= cl_image_tag(item.photo.key, width: 200, height: 200, crop: :fill) %>
+              <% else %>
+                <%= image_tag "surfboard.png", width: 200, height: 200 %>
+              <% end %>
 
-              <div class="card-body">
-                <h5 class="card-title"><%= item.name %></h5>
-                <p class="card-text"><%= item.description %></p>
-                <p class="card-text">Rental Price: <%= item.price %> EUR</p>
-                <%= link_to 'Delete', item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
-                <%= link_to 'Edit', edit_item_path(item), class: "btn btn-primary" %>
-              </div>
-            
+                <div class="card-body">
+                  <h5 class="card-title"><%= item.name %></h5>
+                  <p class="card-text"><%= item.description %></p>
+                  <p class="card-text">Rental Price: <%= item.price %> EUR</p>
+                  <%= link_to 'Delete', item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+                  <%= link_to 'Edit', edit_item_path(item), class: "btn btn-primary" %>
+                </div>
+              
+            </div>
           </div>
-        </div>
-      <% end %>
-      <div class="container mt-3 style="padding: 90px">
-        <%= link_to 'Create Item', new_school_category_item_path, class: "btn btn-primary" %>
+        <% end %>
+
       </div>
+
+      
+        
+      
     </div>
+    
   </div>
+  
 </div>
 
