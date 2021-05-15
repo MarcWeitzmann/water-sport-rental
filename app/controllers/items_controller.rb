@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  
+  skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :set_item, only: [:show, :destroy]
 
   def index
@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to school_category_items_path(@item.school, @item.category), notice: 'Item deleted.'
   end
-  
+
 private
 
   def set_item

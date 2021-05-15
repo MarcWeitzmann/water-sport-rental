@@ -16,10 +16,15 @@
                 <h5 class="card-title"><%= item.name %></h5>
                 <p class="card-text"><%= item.description %></p>
                 <p class="card-text">Rental Price: <%= item.price %> EUR</p>
-                <%= link_to 'Delete', item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
-                <%= link_to 'Edit', edit_item_path(item), class: "btn btn-primary" %>
+                <% if @school.owner?(current_user) %>
+                  <%= link_to 'Delete', item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+                  <%= link_to 'Edit', edit_item_path(item), class: "btn btn-primary" %>
+                <% end %>
+                <% else %>
+                  <%= link_to 'Rent', new_item_rental_path(item), class: "btn btn-primary" %>
+                <% end %>
               </div>
-            
+
           </div>
         </div>
       <% end %>
