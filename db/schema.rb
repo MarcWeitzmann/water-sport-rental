@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_05_15_114358) do
 
 
@@ -57,6 +58,19 @@ ActiveRecord::Schema.define(version: 2021_05_15_114358) do
     t.index ["school_id"], name: "index_items_on_school_id"
   end
 
+  create_table "rentals", force: :cascade do |t|
+    t.date "start_day"
+    t.date "end_day"
+    t.time "start_time"
+    t.time "end_time"
+    t.bigint "item_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_rentals_on_item_id"
+    t.index ["user_id"], name: "index_rentals_on_user_id"
+  end
+
   create_table "schools", force: :cascade do |t|
     t.string "name"
     t.string "street"
@@ -86,4 +100,6 @@ ActiveRecord::Schema.define(version: 2021_05_15_114358) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "schools"
+  add_foreign_key "rentals", "items"
+  add_foreign_key "rentals", "users"
 end
