@@ -1,17 +1,18 @@
 puts "Starting the seed"
 
 puts "Deleting all data"
+Item.destroy_all
 School.destroy_all
 User.destroy_all
 Category.destroy_all
-Item.destroy_all
+
 
 puts "Creating users"
 user1 = User.create({ email: "jack@middleton.com", password: "123456"})
 user2 = User.create({ email: "francisca@best.com", password: "123456"})
 
 puts "Creating schools"
-school1 = School.create({ name: "WindSpirit Club", street: "Av. do Mar", city: "Fonte da Telha", email: "info@windspiritclub.pt", phone: "+351961234567", user: user1 })
+school1 = School.create({ name: "WindSpirit Club", street: "Rua Nova do Carvalho", city: "Lisbon", email: "info@windspiritclub.pt", phone: "+351961234567", user: user1 })
 
 school2 = School.create({name: "Boarder Club Portugal", street: "Rua do Sol", city: "Caparica", email: "info@boarderclub.pt", phone: "+35191987654", user: user2 })
 
