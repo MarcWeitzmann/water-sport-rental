@@ -4,12 +4,12 @@ Rails.application.routes.draw do
 
   resources :schools, only: [ :index, :show ] do
     resources :categories, only: [ :index ] do
-      resources :items , only: [ :index, :show, :new, :create ] do
-       resources :rentals, only: [ :index, :show, :new, :create]
-      end
+      resources :items , only: [ :index, :show, :new, :create ]
     end
   end
 
-  resources :items, only: [:edit, :update, :destroy]
+  resources :items, only: [:edit, :update, :destroy] do
+    resources :rentals, only: [ :index, :show, :new, :create]
+  end
 
 end
