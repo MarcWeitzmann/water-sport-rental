@@ -9,7 +9,9 @@ class SchoolsController < ApplicationController
     @markers = @schools.geocoded.map do |school|
       {
         lat: school.latitude,
-        lng: school.longitude
+        lng: school.longitude,
+        infoWindow: render_to_string(partial: "/schools/info_window", locals: { school: school }),
+        image_url: helpers.asset_url('pin.png')
       }
     end
   end
