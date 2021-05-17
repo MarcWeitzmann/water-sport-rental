@@ -2,21 +2,27 @@
   <div class="row justify-content-center">
     <div class="col-12">
       <h1>Our Schools</h1>
-     <ol>
-        <% @schools.each do |school| %>
-          <li>
-            <%= link_to school.name, school_path(school), class: "" %>
-          </li>
-        <% end %>
-      </ol>
+      
+      <div class="row">
+        <div class="col mt-2">
+          <ol>
+          <% @schools.each do |school| %>
+            <li>
+              <%= link_to school.name, school_path(school), class: "" %>
+            </li>
+          <% end %>
+          </ol>
+        </div>
+        <div id="map" style="width: 50%; height: 400px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div id="map"
-    style="width: 50%; height: 400px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+  
 
 </div>
 
