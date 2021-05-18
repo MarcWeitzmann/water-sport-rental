@@ -1,10 +1,10 @@
 puts "Starting the seed"
 
 puts "Deleting all data"
+Item.destroy_all
 School.destroy_all
 User.destroy_all
 Category.destroy_all
-Item.destroy_all
 Rental.destroy_all
 
 puts "Creating users"
@@ -12,15 +12,15 @@ user1 = User.create({ email: "jack@middleton.com", password: "123456"})
 user2 = User.create({ email: "francisca@best.com", password: "123456"})
 
 puts "Creating schools"
-school1 = School.create({ name: "WindSpirit Club", street: "Av. do Mar", city: "Fonte da Telha", email: "info@windspiritclub.pt", phone: "+351961234567", user: user1 })
+school1 = School.create({ name: "WindSpirit Club", street: "Rua das Camélias", city: "Costa da Caparica", email: "info@windspiritclub.pt", phone: "+351961234567", user: user1 })
 
-school2 = School.create({name: "Boarder Club Portugal", street: "Rua do Sol", city: "Caparica", email: "info@boarderclub.pt", phone: "+35191987654", user: user2 })
+school2 = School.create({name: "Boarderclub Portugal", street: "Praia da Nova Vaga", city: "Costa da Caparica", email: "info@boarderclub.pt", phone: "+35191987654", user: user2 })
 
 puts "Creating categories"
-category_surf = Category.create ({ name: "Surf", description: "Enjoy the day with a sufing experience", image_name: "surfing.jpg"})
-category_sup = Category.create({ name: "SUP", description: "Relax sliding over the water", image_name: "SUP.jpg"})
-category_kitesurf = Category.create({ name: "Kitesurf", description: "Big jumps, big waves", image_name: "kitesurf.jpg"})
-category_lesson = Category.create({ name: "Lesson", description: "From zero to hero", image_name: "lesson.jpg"})
+category_surf = Category.create ({ name: "Surf", description: "Surfing is not only a sport, it's a life style", image_name: "surfing.jpg"})
+category_sup = Category.create({ name: "SUP", description: "Paddleboarding heals the soul", image_name: "SUP.jpg"})
+category_kitesurf = Category.create({ name: "Kitesurf", description: "It's more fun if you just let the wind carry you", image_name: "kitesurf.jpg"})
+category_lesson = Category.create({ name: "Lesson", description: "You can't stop the waves so learn how to surf", image_name: "lesson.jpg"})
 
 puts "Creating items"
 item1001 = Item.create({ name: "3.5 Surfboard", description: "For all conditions", price: 30, category: category_surf, school: school1 })

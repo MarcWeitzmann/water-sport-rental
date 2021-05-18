@@ -1,0 +1,14 @@
+
+<%= simple_form_for [ @item, @rental] do |f| %>
+  <%= @rental.errors.full_messages%>
+  <div class="form-inputs">
+    <%= f.input :start_day %>
+    <%= f.input :end_day %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+  </div>
+
+  <div class="form-actions btn btn-primary">
+    <%= f.button :submit %>
+  </div>
+<% end %>
