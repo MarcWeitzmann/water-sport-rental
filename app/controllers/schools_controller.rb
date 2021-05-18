@@ -2,8 +2,13 @@ class SchoolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :set_school, only: [:show]
 
+  
   def index
-    @schools = School.all
+    if params[:query].present?
+      @schools = School.search_by_name_and_city_and_street(params[:query])
+    else
+      @schools = School.all
+    end
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @schools.geocoded.map do |school|
