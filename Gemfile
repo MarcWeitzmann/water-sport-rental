@@ -16,6 +16,10 @@ gem 'webpacker', '~> 4.0'
 
 gem 'geocoder'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'cloudinary', '~> 1.16.0'
+
 gem 'pg_search', '~> 2.3.0'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
