@@ -9,7 +9,7 @@
           <% @schools.each do |school| %>
             <div class="col">
               <div class="card" >
-                <img src="assets/images/school_surf2" class="card-img-top" alt="...">
+                <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="font-weight-bold"><%=school.name %></h5>
                   <p class="card-text"><%=school.phone %></p>
@@ -19,6 +19,10 @@
                 </div>
               </div>
             </div>
+=======
+            <li>
+              <%= link_to school.name, school_path(school), class: "btn btn-link" %>
+            </li>
           <% end %>
         </div>
       </div>
