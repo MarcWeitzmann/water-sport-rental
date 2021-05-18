@@ -14,7 +14,7 @@ user2 = User.create({ email: "francisca@best.com", password: "123456"})
 puts "Creating schools"
 school1 = School.create({ name: "WindSpirit Club", street: "Rua das Camélias", city: "Costa da Caparica", email: "info@windspiritclub.pt", phone: "+351961234567", user: user1 })
 
-school2 = School.create({name: "Boarder Club Portugal", street: "Praia da Nova Vaga", city: "Costa da Caparica", email: "info@boarderclub.pt", phone: "+35191987654", user: user2 })
+school2 = School.create({name: "Boarderclub Portugal", street: "Praia da Nova Vaga", city: "Costa da Caparica", email: "info@boarderclub.pt", phone: "+35191987654", user: user2 })
 
 puts "Creating categories"
 category_surf = Category.create ({ name: "Surf", description: "Surfing is not only a sport, it's a life style", image_name: "surfing.jpg"})
