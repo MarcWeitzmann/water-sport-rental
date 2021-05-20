@@ -1,19 +1,15 @@
 class CategoriesController < ApplicationController
-
-before_action :set_category, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show, :index]
+  before_action :set_school
 
   def index
     @categories = Category.all
   end
 
-  def show
+  private
+
+  def set_school
+    @school = School.find(params[:school_id])
   end
-  
-private
-    
-    def set_category
-      @category = Category.find(params[:id])
-    end
 
 end
-
