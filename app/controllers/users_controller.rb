@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Avatar updated!"
-      #redirect_to school_category_items_path(@item.school, @item.category)
+      redirect_to root_path
     else
       render action: :edit
     end
