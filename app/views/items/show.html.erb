@@ -1,0 +1,45 @@
+<div class="container mt-3" >
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h1>Reviews for <%= @item.name %> </h1>
+    </div>
+
+    <div class="col-6">
+
+      
+        <strong>
+          <%= pluralize @item.reviews.size, "review"  %><%= " added" %>
+        </strong>
+      
+      
+        <div class="mt-3" id="reviews">
+          <% if @item.reviews.blank? %>
+            Be the first to leave a review for <%= @item.name %>
+          <% else %>
+            <% @item.reviews.each do |review| %>
+              <p id="review-<%= review.id %>">
+                <%= review.content %>
+              </p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <%= simple_form_for([@item, @review], remote: true) do |f| %>
+          <%= f.input :content, as: :text %>
+          <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+
+    </div>
+
+    <div class="col-6">  
+      <div class="card" style="width: 18rem;">
+        <% if @item.photo.attached? %>
+          <%= cl_image_tag(item.photo.key, width: 200, height: 200, crop: :fill) %>
+        <% else %>
+          <%= image_tag "surfboard.png", width: 200, height: 200 %>
+        <% end %>
+    </div>
+      
+    </div>
+  </div>
+</div>

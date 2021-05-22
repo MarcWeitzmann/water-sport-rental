@@ -4,16 +4,22 @@ Rails.application.routes.draw do
 
   resources :schools, only: [ :index, :show ] do
     resources :categories, only: [ :index ] do
-      resources :items , only: [ :index, :show, :new, :create ]
+      resources :items , only: [ :index, :new, :create ]
     end
   end
+  resources :rentals, only: [ :index ]
 
-  resources :items, only: [:edit, :update, :destroy] do
-    resources :rentals, only: [ :index, :show, :new, :create]
+  resources :reviews, only: [ :index, :new, :create ]
+
+  resources :items, only: [:edit, :update, :destroy, :show] do
+    resources :reviews, only: [ :create ]
+    resources :rentals, only: [ :show, :new, :create]
   end
 
   namespace :admin do
     resources :schools
   end
+
   resources :users, only: [:edit, :update]
+
 end

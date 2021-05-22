@@ -2,7 +2,10 @@ class RentalsController < ApplicationController
     before_action :set_rental, only: [:show]
 
   def index
-    @rentals = Rentall.all
+    @rentals = Rental.all
+  end
+
+  def show
   end
 
   def new
@@ -23,9 +26,6 @@ class RentalsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
   end
 
 private
