@@ -1,11 +1,20 @@
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('beach_image.jpg') %>)">
+  <h1><%= @school.name %></h1>
+</div>
+
+
 <div class="container mt-3" >
   <div class="row justify-content-center">
+ <div class="card">
+    <div class="card-body">
     <div class="col-12">
-      <h1><%= @school.name %></h1>
       <p><%= @school.street %></p>
       <p><%= @school.city %></p>
       <p><%= @school.email %></p>
       <p><%= @school.phone %></p>
+    </div>
+    </div>
     </div>
   </div>
 </div>
@@ -13,7 +22,9 @@
 <div class="container mt-3">
   <div class="row justify-content-center">
     <div class="col-12">
+      <div class="row justify-content-center">
       <%= link_to "Categories of this school", school_categories_path(@school), class: "btn btn-primary" %>
-    </div>
+      </div>
+     </div>
   </div>
 </div>

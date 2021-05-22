@@ -6,6 +6,7 @@
       <div class="row">
         <div class="col-6">
           <div class="row">
+
             <% @schools.each do |school| %>
               <div class="col-6">
                 <div class="card">
@@ -23,6 +24,7 @@
                     <p class="card-text"><%=school.email %></p>
                     <%= link_to "Learn More", school_path(school), class: "btn btn-primary" %>
                   </div>
+
                 </div>
               </div>
             <% end %>
@@ -36,7 +38,7 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
   </div>
 </div>
 
