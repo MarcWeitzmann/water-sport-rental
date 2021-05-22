@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_one :school
   has_many :rentals
   has_many :items, through: :rentals
+
+  def name
+    email
+  end
 end
