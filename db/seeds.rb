@@ -9,7 +9,7 @@ Rental.destroy_all
 
 puts "Creating users"
 user1 = User.create({ email: "jack@middleton.com", password: "123456"})
-user2 = User.create({ email: "francisca@best.com", password: "123456", admin: "true"})
+user2 = User.create({ email: "francisca@best.com", password: "123456", admin: true})
 
 puts "Creating schools"
 school1 = School.create({ name: "WindSpirit Club", street: "Rua das Camélias", city: "Costa da Caparica", email: "info@windspiritclub.pt", phone: "+351961234567", user: user1 })
