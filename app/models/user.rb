@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   has_one :school
-
+  has_many :rentals
+  has_many :items, through: :rentals
 end
