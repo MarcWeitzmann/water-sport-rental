@@ -12,10 +12,14 @@
           placeholder: "Search for a School",
           class: "form-control"
         %>
+        
         <button type="submit" class="btn btn-link"><i class="fas fa-search-location"></i>
         </button>
       <% end %>
-
+      Number of users:
+      <div class="badge badge-primary p-2 mr-2">
+      <span> <%= @user_count %></span>
+      </div>
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,10 +36,10 @@
             <%= link_to 'My School', school_path(current_user.school), class: "nav-link" %>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Make review", root_path, class: "nav-link" %>
+              <%= link_to "Make review", new_review_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "My Rentals", "#", class: "nav-link" %>
+              <%= link_to "My Rentals", rentals_path, class: "nav-link" %>
             </li>
           <% end %>
 

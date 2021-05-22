@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module WaterSportRental
   class Application < Rails::Application
+    
+
     config.generators do |generate|
       generate.assets false
       generate.helper false
@@ -16,6 +18,10 @@ module WaterSportRental
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+
+    config.action_view.embed_authenticity_token_in_remote_forms = true
+
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

@@ -1,0 +1,13 @@
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-12" %>
+      <h1>Make a Review</h1>
+           
+      <%= simple_form_for(@review, remote: true) do |f| %>
+        <%= f.association :item, collection: current_user.items %>
+        <%= f.input :content, as: :text %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
