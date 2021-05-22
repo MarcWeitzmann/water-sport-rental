@@ -8,9 +8,10 @@
           <div class="row">
           <% @schools.each do |school| %>
             <div class="col">
+
+
               <div class="card">
                 <%= image_tag "school.jpg", width: 120, height: 80 %>
-
                 <div class="card-body">
                   <h5 class="font-weight-bold"><%=school.name %></h5>
                   <p class="card-text"><%=school.street %></p>
@@ -30,7 +31,7 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-    </div>    
+    </div>
   </div>
 </div>
 
