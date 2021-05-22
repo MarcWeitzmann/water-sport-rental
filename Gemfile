@@ -18,9 +18,9 @@ gem 'geocoder'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
-gem 'cloudinary', '~> 1.16.0'
-
 gem 'pg_search', '~> 2.3.0'
+
+gem 'turbolinks_render'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
