@@ -10,7 +10,7 @@
 
     <% @schools.each do |school| %>
       <div class="col mt-3">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 24rem">
           <% if school.photo.attached? %>
             <%= cl_image_tag(school.photo.key, width: 200, height: 200, crop: :fill) %>
           <% else %>
